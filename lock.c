@@ -10,7 +10,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "busybox.h"
+#include <stdlib.h>
+#include <string.h>
 
 //usage:#define lock_trivial_usage NOUSAGE_STR
 //usage:#define lock_full_usage ""
@@ -99,8 +100,7 @@ static int do_lock(void)
 	return 0;
 }
 
-int lock_main(int argc, char **argv) MAIN_EXTERNALLY_VISIBLE;
-int lock_main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	char **args = &argv[1];
 	int c = argc - 1;
